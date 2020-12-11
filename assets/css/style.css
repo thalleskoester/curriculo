@@ -1,0 +1,542 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    font-family: 'Merriweather', serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.section_title {
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+
+.section_title [class^="icon-"],
+.section_title [class*=" icon-"] {
+    color: #555;
+}
+
+.section_title .title {
+    font-family: 'Open Sans', sans-serif;
+    color: #2779C9;
+}
+
+.section_sub_title {
+    color: #3f3f3f;
+    text-transform: uppercase;
+    font-size: .95em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.main_header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "title contact" "links .";
+
+    align-items: center;
+    margin-top: 15px;
+}
+
+.main_title {
+    grid-area: title;
+}
+
+.main_contact {
+    grid-area: contact;
+}
+
+.main_contact > div {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 10px;
+}
+
+.main_contact > div:last-of-type {
+    margin-bottom: 0;
+}
+
+.main_contact > div p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 4px;
+}
+
+.main_contact > div p:before {
+    margin-right: 3px;
+}
+
+.main_contact > div p:last-of-type {
+    margin-bottom: 0;
+}
+
+.main_contact .contact_info {
+    font-weight: 700;
+}
+
+.main_links {
+    grid-area: links;
+    display: flex;
+}
+
+.main_links span {
+    margin-right: 15px;
+    font-size: 1.1em;
+    color: #444;
+}
+
+.main_links span:before {
+    font-size: 1.2em;
+}
+
+.main_links a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+.main_links a:last-of-type {
+    margin-right: 0;
+}
+
+.main_body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "body aside" "others aside";
+
+    margin-top: 20px;
+    align-items: start;
+}
+
+.main_content {
+    grid-area: body;
+}
+
+.main_content > section {
+    margin-bottom: 15px;
+}
+
+.degrees_item,
+.experiences_item,
+.aside_item {
+    padding: 7px;
+}
+
+.degrees_item h3,
+.experiences_item h3 {
+    font-style: italic;
+}
+
+.degrees_item > span,
+.experiences_item > span {
+    margin-top: 3px;
+    text-transform: uppercase;
+    font-size: .875em;
+    color: #3f3f3f;
+}
+
+.degrees_item p,
+.experiences_item p {
+    margin-top: 5px;
+    font-size: .9em;
+}
+
+.main_others {
+    grid-area: others;
+    display: flex;
+}
+
+.main_others > article {
+    flex-basis: 50%;
+    padding: 7px;
+}
+
+.main_others > article .section_title {
+    margin-top: -7px;
+    margin-left: -7px;
+}
+
+.main_aside {
+    grid-area: aside;
+}
+
+.aside_item {
+    margin-top: 10px;
+}
+
+.aside_item:first-of-type {
+    margin-top: 0;
+}
+
+.aside_item li {
+    margin-bottom: 10px;
+}
+
+.marker {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 7px 13px;
+    background-color: darkred;
+}
+
+@media (max-width: 1200px) {
+    .marker {
+        background-color: red;
+    }
+
+    main {
+        max-width: 960px;
+    }
+
+    .main_body {
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "body ." "aside ." "others .";
+    }
+
+    .aside_item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .aside_item .section_sub_title {
+        flex-basis: 100%;
+    }
+
+    .aside_item .skillbar {
+        flex-basis: 49%;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .marker {
+        background-color: darkorange;
+    }
+
+    main {
+        max-width: 720px;
+    }
+
+    .main_header {
+        grid-template-columns: 4fr 1fr;
+    }
+
+    .main_body {
+        grid-template-columns: 4fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .marker {
+        background-color: yellow;
+    }
+
+    main {
+        max-width: 540px;
+    }
+
+    .main_header {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "title" "contact" "links";
+    }
+
+    .main_contact {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .main_contact div {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .main_contact > div:last-of-type {
+        margin-right: 0;
+    }
+
+    .main_body {
+        grid-template-columns: 100%;
+        grid-template-areas: "body" "aside" "others";
+    }
+}
+
+@media (max-width: 576px) {
+    .marker {
+        background-color: green;
+    }
+}
+
+/*
+    SKILL BAR
+*/
+
+.skillbar {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .04);
+    border-radius: 5px 0 0 5px
+}
+
+.skillbar .title {
+    background-color: rgba(0, 0, 0, .6);
+    height: 30px;
+    width: 85px;
+    text-align: center;
+    left: 0;
+    color: #f0f0f0;
+    border-radius: 5px 0 0 5px
+}
+
+.skillbar .percent,
+.skillbar .title {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    z-index: 9
+}
+
+.skillbar .percent {
+    right: 0;
+    color: #000;
+    font-weight: 700
+}
+
+.skillbar .filled {
+    z-index: 8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 80, 80, .3);
+    height: 100%;
+    width: 20px;
+    border-radius: 5px 0 0 5px
+}
+
+.skillbar.html .title {
+    background-color: #c96300
+}
+
+.skillbar.html .filled {
+    background-color: #ff8817
+}
+
+.skillbar.css .title {
+    background-color: #0f5487
+}
+
+.skillbar.css .filled {
+    background-color: #177fcb
+}
+
+.skillbar.js .title {
+    background-color: #f0b109
+}
+
+.skillbar.js .filled {
+    background-color: #f8ca4d
+}
+
+.skillbar.php .title {
+    background-color: #3d4670
+}
+
+.skillbar.php .filled {
+    background-color: #5864a2
+}
+
+.skillbar.jquery .title {
+    background-color: #064a7a
+}
+
+.skillbar.jquery .filled {
+    background-color: #0977c3
+}
+
+.skillbar.sass .title {
+    background-color: #ba437d
+}
+
+.skillbar.sass .filled {
+    background-color: #cf7aa4
+}
+
+.skillbar.less .title {
+    background-color: #1f3861
+}
+
+.skillbar.less .filled {
+    background-color: #31599b
+}
+
+.skillbar.react .title {
+    background-color: #33c7f0
+}
+
+.skillbar.react .filled {
+    background-color: #7adbf5
+}
+
+.skillbar.nodejs .title {
+    background-color: #5e8f35
+}
+
+.skillbar.nodejs .filled {
+    background-color: #83bf51
+}
+
+.skillbar.angular .title {
+    background-color: #8f0023
+}
+
+.skillbar.angular .filled {
+    background-color: #dc0035
+}
+
+.skillbar.vue .title {
+    background-color: #2f8f67
+}
+
+.skillbar.vue .filled {
+    background-color: #47c390
+}
+
+.skillbar.meteor .title {
+    background-color: #cc2b2c
+}
+
+.skillbar.meteor .filled {
+    background-color: #de6566
+}
+
+.skillbar.backbone .title {
+    background-color: #005086
+}
+
+.skillbar.backbone .filled {
+    background-color: #007dd3
+}
+
+.skillbar.ember .title {
+    background-color: #c63d2d
+}
+
+.skillbar.ember .filled {
+    background-color: #dc7064
+}
+
+.skillbar.mysql .title {
+    background-color: #003e58
+}
+
+.skillbar.mysql .filled {
+    background-color: #0073a5
+}
+
+.skillbar.python .title {
+    background-color: #295479
+}
+
+.skillbar.python .filled {
+    background-color: #3d7cb2
+}
+
+.skillbar.django .title {
+    background-color: #010705
+}
+
+.skillbar.django .filled {
+    background-color: #0e4731
+}
+
+.skillbar.agile .title {
+    background-color: #198cb7
+}
+
+.skillbar.agile .filled {
+    background-color: #37b6e4
+}
+
+.skillbar.photoshop .title {
+    background-color: #211a56
+}
+
+.skillbar.photoshop .filled {
+    background-color: #382c90
+}
+
+.skillbar.illustrator .title {
+    background-color: #572e11
+}
+
+.skillbar.illustrator .filled {
+    background-color: #98511d
+}
+
+.skillbar.indesign .title {
+    background-color: #a42b69
+}
+
+.skillbar.indesign .filled {
+    background-color: #d04c8f
+}
+
+.skillbar.laravel .title {
+    background-color: #f0280f
+}
+
+.skillbar.laravel .filled {
+    background-color: #f56856
+}
+
+.skillbar.git .title {
+    background-color: #e3330f;
+}
+
+.skillbar.git .filled {
+    background-color: #f3684c;
+}
+
+.skillbar.c .title {
+    background-color: #9C004C;
+}
+
+.skillbar.c .filled {
+    background-color: #EB4C8D;
+}
+
+.skillbar.cpp .title {
+    background-color: #00589D;
+}
+
+.skillbar.cpp .filled {
+    background-color: #659BD3;
+}
+
+.skillbar.aws .title {
+    background-color: #d17d00;
+}
+
+.skillbar.aws .filled {
+    background-color: #ffa51f;
+}

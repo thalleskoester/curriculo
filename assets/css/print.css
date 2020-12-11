@@ -1,0 +1,55 @@
+* {
+    -webkit-print-color-adjust: exact;
+}
+
+/* Defining all page breaks */
+a {
+    page-break-inside: avoid;
+}
+
+blockquote {
+    page-break-inside: avoid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+table, pre {
+    page-break-inside: avoid;
+}
+
+ul, ol, dl {
+    page-break-before: avoid;
+}
+
+li {
+    page-break-inside: avoid;
+}
+.aside_item{
+    page-break-inside: avoid;
+}
+
+/**
+ * Making intergated videos disappear, and removing the iframes' whitespace to zero.
+ */
+iframe, ins {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    line-height: 0 !important;
+    white-space: nowrap;
+}
+
+.embed-youtube, .embed-responsive {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+}
