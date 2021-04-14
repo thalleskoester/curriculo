@@ -9,6 +9,13 @@
     font-family: 'Merriweather', serif;
 }
 
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    position: relative !important;
+    top: .125rem !Important;
+    margin-right: .4rem !Important;
+}
+
 ul {
     list-style: none;
 }
