@@ -319,7 +319,7 @@ main {
 .skillbar .percent {
     right: 0;
     color: #000;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .skillbar .filled {
@@ -539,4 +539,12 @@ main {
 
 .skillbar.aws .filled {
     background-color: #ffa51f;
+}
+
+.skillbar.docker .title {
+    background-color: #097fa4;
+}
+
+.skillbar.docker .filled {
+    background-color: #0db7ed;
 }
